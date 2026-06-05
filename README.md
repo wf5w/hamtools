@@ -13,6 +13,14 @@ NOTE: I wrote this in a UV environment, so if you do not use the uv venv then si
 
 ### Prerequisites
 
+**NOTE** for this to work, you must be in the **dialout** group
+
+1. do $ **id**
+2. if it doesn't show dialout, you must add yourself to the dialout group, and REBOOT.
+3. to add yourself in the dialout group do $ **sudo usermod -aG dialout <your_user_name>**
+4. sudo reboot (or reboot by any other means).
+
+
 Read the comments in the file for how to set up your radio:
 
 For the FTX-1 it was simple:
