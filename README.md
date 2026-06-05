@@ -18,7 +18,7 @@ NOTE: I wrote this in a UV environment, so if you do not use the uv venv then si
 1. do $ **id**
 2. if it doesn't show dialout, you must add yourself to the dialout group, and REBOOT by doing the next 2 steps:
 
-    a. to add yourself in the dialout group do $ **sudo usermod -aG dialout <your_user_name>**
+    a. to add yourself in the dialout group do $ **sudo usermod -aG dialout $USER**
 
     b. sudo reboot (or reboot by any other means).
 
