@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+# sendcw: send characters to the cwdtrd daemon
+#
+# this is a simple helper script to just do the last line
+# which is: echo my input text | nc HOST PORT
+# it allows for optional input of either the HOST or the PORT or both
+# if no input, then print out the usage statement and exit
+
+if [ -z $1 ]; then
+  echo usage: sendcw [ -h hostip ] [ -p port ] words to send ...
+  exit 0
+fi
+
+# Default variable values
+HOST=127.0.0.1
+PORT=9999
+
+while getopts "h:p:" opt; do
+  case ${opt} in
+  h)
+    HOST=${OPTARG}
+    ;;
+  p)
+    PORT="${OPTARG}"
+    ;;
+  \?)
+    echo "Invalid option: -${OPTARG}" >&2
+    exit 1
+    ;;
+  :)
+    echo "Option -${OPTARG} requires an argument." >&2
+    exit 1
+    ;;
+  esac
+done
+
+# Shift off processed options so $1 points to the first positional argument
+shift $((OPTIND - 1))
+
+echo "doing: echo $* | nc $HOST $PORT"
+echo $* | nc $HOST $PORT
