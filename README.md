@@ -24,6 +24,8 @@ Similar for other Yaesu radio's.
 
 ### Usage
 
+make sure to do a $ **chmod +x cwdtrd**, and put it in your path
+
 $ **cwdtrd -h** will give you help, and to see the parameters and their defaults.
 
 To Run with default values:
@@ -47,6 +49,8 @@ $ **echo "cq cq de wf5w" | nc 192.168.1.205 9999**
 This is a helper script to do the above echo to netcat. It is probably easier in the heat of the moment, while doing a QSO.
 
 ### usage
+
+make sure to do a $ **chmod +x sendcw**, and put it in your path
 
 each of these is valid, depending upon how and where on the network, you started up the cwdtrd daemon
 
