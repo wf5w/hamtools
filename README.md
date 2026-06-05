@@ -1,7 +1,7 @@
 # hamtools
 Ham Related Tools
 
-### cwdtrd
+## cwdtrd
 cwdtrd is a daemon which runs in the background, and accepts characters to send to Yaesu radios that have both STANDARD and ENHANCED serial ports.
 cwdtrd use the STANDARD port which is the one higher than the CAT/PTT port. It defaults to /dev/ttyUSB1
 
@@ -11,7 +11,7 @@ NOTE: I wrote this in a UV environment, so if you do not use the uv venv then si
 
 **#!/usr/bin/env python**
 
-#### Prerequisites
+### Prerequisites
 
 Read the comments in the file for how to set up your radio:
 
@@ -22,7 +22,7 @@ For the FTX-1 it was simple:
 
 Similar for other Yaesu radio's.
 
-#### Usage
+### Usage
 
 $ **cwdtrd -h** will give you help, and to see the parameters and their defaults.
 
@@ -42,3 +42,18 @@ so, lets say you run the daemon on host 192.168.1.205 where your radio is hooked
 
 $ **echo "cq cq de wf5w" | nc 192.168.1.205 9999**
 
+## sendcw
+
+This is a helper script to do the above echo to netcat. It is probably easier in the heat of the moment, while doing a QSO.
+
+### usage
+
+each of these is valid, depending upon how and where on the network, you started up the cwdtrd daemon
+
+**sendcw** -- prints the usage statement and exits
+
+**sendcw** cq de wf5w
+
+**sendcw -h 192.168.1.218 cq de wf5w**
+
+**sendcw -h 192.168.1.218 -p 8888 cq de wf5w**
