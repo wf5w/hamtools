@@ -1,0 +1,40 @@
+# Templates file:
+#[xxxx] = name of template to be a choice in eventtype combobox
+#@ n = which button (1-4) to create a log with  if n = 0, or this line not found then no logging will be done
+#this is send 1 template string
+#this is send 2 template string
+#this is send 3 template string
+#this is send 4 template string
+#(there are only 4 entry boxes, so no more than 4 template strings per eventtype)
+# ...
+#
+# variables used:
+#   $hunter -- hunter callsign
+#   $mycall -- my callsign
+#   $reference -- for event eg. pota reference US-xxxx, 
+#                               sota reference W4T/SU-003,
+#                               wwff reference KFF-2551 etc 
+#
+#   $eventtype -- is what is in the [ ]
+
+[pota]
+@ 2
+$hunter 5nn $reference kn
+TU $hunter 73 k
+$mycall qrz? k
+cq $eventtype de $mycall $mycall k
+
+[sota]
+@ 2
+$hunter 5nn 5nn bk
+r tu 73 de $mycall k
+73 ee 
+cq cq $eventtype de $mycall k
+
+[wwff]
+@ 2
+$hunter de $mycall rst 5nn $reference kn
+tu $hunter de $mycall 73 k
+$mycall qrz? k
+cq cq $eventtype de $mycall $mycall k
+
