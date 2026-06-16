@@ -78,4 +78,7 @@ These programs will use pyton tkinter to provide a gui mechanism to using the cw
 Particularly, the tkcwsendevent.py was designed to be a FT8 style cw event QSO, with pota, sota, and WWFF events.
 It uses, cwtemplates.txt file (to be placed in the HOME directory). If you want to add another event, feel free to do so.
 
+To use these GUI programs. 
 
+1. do a **$ chmod +x tk\***
+2. put them in your path
