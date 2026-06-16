@@ -7,8 +7,6 @@ cwdtrd use the STANDARD port which is the one higher than the CAT/PTT port. It d
 
 cwdtrd is written in python 3, and needs to have pyserial installed via pip.
 
-NOTE: I wrote this in a UV environment, so if you do not use the uv venv then simply add this to the top line of the file:
-
 **#!/usr/bin/env python**
 
 ### Prerequisites
