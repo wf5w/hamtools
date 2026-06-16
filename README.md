@@ -70,6 +70,9 @@ each of these is valid, depending upon how and where on the network, you started
 
 **sendcw -h 192.168.1.218 cq de wf5w**
 
+**sendcw -h 192.168.1.218 -p 8888 cq de wf5w**
+
+
 # tk versions of programs
 
 These programs will use pyton tkinter to provide a gui mechanism to using the cwdtrd, and sendcw scripts.
@@ -78,5 +81,3 @@ Particularly, the tkcwsendevent.py was designed to be a FT8 style cw event QSO, 
 It uses, cwtemplates.txt file (to be placed in the HOME directory). If you want to add another event, feel free to do so.
 
 
-
-**sendcw -h 192.168.1.218 -p 8888 cq de wf5w**
