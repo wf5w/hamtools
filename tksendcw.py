@@ -56,7 +56,7 @@ class App:
         self.ent_port.grid(row=0, column=3, padx=5, pady=5, sticky="ew")
 
         self.ent_port.delete(0, tk.END)
-        self.ent_port.insert(0, "4532")
+        self.ent_port.insert(0, "9999")
 
         lbl_cs = tk.Label(topframe, text="Callsign:", bg="lightblue")
         lbl_cs.grid(row=2, column=0, padx=5, pady=5, sticky="w")
@@ -242,7 +242,7 @@ class App:
             if host != "127.0.0.1":
                 cmd.append("-h")
                 cmd.append(host)
-            if port != "4532":
+            if port != "9999":
                 cmd.append("-p")
                 cmd.append(port)
 
