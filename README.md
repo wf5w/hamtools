@@ -75,6 +75,8 @@ each of these is valid, depending upon how and where on the network, you started
 
 These programs will use pyton tkinter to provide a gui mechanism to using the cwdtrd, and sendcw scripts.
 
+See the CW system usage document for more information.
+
 Particularly, the tkcwsendevent.py was designed to be a FT8 style cw event QSO, with pota, sota, and WWFF events.
 It uses, cwtemplates.txt file (to be placed in the HOME directory). If you want to add another event, feel free to do so.
 
