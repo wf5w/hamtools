@@ -75,7 +75,7 @@ class App:
         self.entrydefs["host"][3].insert(0, "127.0.0.1")
 
         self.entrydefs["port"][3].delete(0, tk.END)
-        self.entrydefs["port"][3].insert(0, "4532")
+        self.entrydefs["port"][3].insert(0, "9999")
 
         baudrates = ["4800", "9600", "19200", "38400", "115200"]
         self.entrydefs["baudrate"][3].config(values=baudrates)
@@ -135,7 +135,7 @@ class App:
         if host != "127.0.0.1":
             cmd.append("-i")
             cmd.append(host)
-        if port != "4532":
+        if port != "9999":
             cmd.append("-p")
             cmd.append(port)
         if wpm != "20":
