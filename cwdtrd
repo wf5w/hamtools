@@ -1,12 +1,4 @@
-#!/usr/bin/env -S uv --quiet run --script
-# /// script
-# requires-python = "==3.15.0a1"
-# dependencies = [
-#     "python-toon>=0.1.3",
-#     "pyserial>=3.5",
-#     "requests>=2.32.5",
-# ]
-# ///
+#!/usr/bin/env python
 
 # NOTE:
 # I run this is part of a uv python environment.
@@ -72,8 +64,7 @@ class CWDTR:
             'Y': '-.--', 'Z': '--..', ' ': ' ',
             '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....',
             '7': '--...', '8': '---..', '9': '----.', '0': '-----',
-            '.': '.-.-.-', ',': '--..--', 
-            '?': '..--..', '/': '-..-.', '@': '.--.-.'
+            '.': '.-.-.-', ',': '--..--', '?': '..--..', '/': '-..-.', '@': '.--.-.'
         }
 
         # 2. CW timing
@@ -89,7 +80,7 @@ class CWDTR:
             ser.dtr = False  # Start with DTR LOW (key up)
             time.sleep(0.5)  # Wait for port to stabilize
             
-            for char in message:
+            for char in message.upper():
                 self.send_cw_char(ser, char)
                 
         except Exception as e:
@@ -100,7 +91,7 @@ class CWDTR:
 
     def send_cw_char(self, ser, char):
         """Sends a single character using DTR pin toggling."""
-        char = char.upper()
+        #char = char.upper()
         if char in self.MORSECODE:
             if char == ' ':
                 time.sleep(self.WORD_DURATION) # Word space
@@ -221,8 +212,7 @@ if __name__ == '__main__':
     parser.add_argument('-i', '--ipaddress', type=str, default='0.0.0.0', help="HOST IP ADDRESS of Daemon (0.0.0.0)")
     parser.add_argument('-p', '--port', type=str, default='9999', help="IP PORT of Daemon (9999)")
     parser.add_argument('-w', '--wpm', type=int, default=20, help="WPM to send (20 wpm)")
-    parser.add_argument( "-v", "--version", action="version", version=f"cwdtrd {VERSION}"
-)
+    parser.add_argument( "-v", "--version", action="version", version=f"cwdtrd {VERSION}")
 
     # Parse the arguments
     args = parser.parse_args()
@@ -237,5 +227,4 @@ if __name__ == '__main__':
 
     # run daemon 
     daemonize()
-
 
